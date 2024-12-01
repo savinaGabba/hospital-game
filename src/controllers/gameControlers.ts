@@ -1,6 +1,7 @@
 import { Doctor } from "../models/doctor";
 import { Patient } from "../models/patient";
 import * as gameView from "../views/gameView";
+import * as prompts from "../utils/prompts";
 
 export class GameController {
     private doctors: Doctor[] = [];//un array que contiene los doctores disponibles en el juego.
@@ -53,8 +54,10 @@ export class GameController {
     }
 
     // Lógica de cada nivel.
-    private playLevel(): void {
-        this.configureLevel(this.level); // Configura pacientes específicos para el nivel.
+    private async playLevel(): Promise<void> {
+        await prompts.selectDoctor(this.doctors.map(doc => doc.name)); // Seleccionar doctor.
+        await prompts.selectPatient(this.patients.map(pat => pat.name)); // Seleccionar paciente.
+    }
     
         // Mostrar pacientes disponibles.
         gameView.showPatients(this.patients);
