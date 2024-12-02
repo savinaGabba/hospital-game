@@ -1,3 +1,5 @@
+//src/index.ts
+
 import { GameController } from "../src/controllers/gameControlers";
 
 // Inicializa el juego

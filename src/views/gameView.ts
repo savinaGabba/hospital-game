@@ -38,6 +38,16 @@ export function showLevelFailed(level: number): void {
     console.log(`❌ Nivel ${level} no completado. Aún quedan pacientes por atender.\n`);
 }
 
+// Función para mostrar el tiempo restante
+export function showTimeRemaining(timeRemaining: number): void {
+    console.log(`Tiempo restante: ${timeRemaining} segundos.`);
+}
+
+// Función para mostrar el mensaje de fin de tiempo
+export function showTimeUpMessage(): void {
+    console.log("¡El tiempo se ha agotado! Has perdido el nivel.");
+}
+
 // Mostrar mensaje de finalización del juego.
 export function showGameEnd(): void {
     console.log("🏁 El juego ha terminado. ¡Gracias por jugar al Juego del Hospital! 👩‍⚕️👨‍⚕️");
